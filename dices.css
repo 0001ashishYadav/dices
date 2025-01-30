@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#mainCon {
+    height: 500px;
+    width: 800px;
+    border: 5px double rgb(242, 163, 5);
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 20px;
+}
+
+#mainCon div {
+    height: 200px;
+    width: 250px;
+    animation: rotate 0.5s 1 ;
+}
+
+#mainCon p {
+    position: absolute;
+    top: 90px;
+    color: red;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#downCon{
+    width: 800px;
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#addBtn {
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: rgb(242, 163, 5) ;
+    border: 2px solid rgb(242, 163, 5) ;
+    /* background-color: rgb(242, 163, 5); */
+   
+}
+
+#resetValueBtn {
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: rgb(242, 163, 5) ;
+    border: 2px solid rgb(242, 163, 5) ;
+
+}
+
+#totalCon {
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(242, 163, 5) ;
+    border: 2px solid rgb(242, 163, 5) ;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #mainCon {
+        height: 170px;
+        width:  90%;
+        border: 2px solid rgb(242, 163, 5);
+        padding: 10px;
+    }
+
+    #mainCon div {
+        height: 70px;
+        width: 70px;
+    }
+
+    #mainCon p {
+        top: 28px;
+        font-size: 15px;
+    }
+
+
+    #mainCon img {
+        height: 50px;
+        width: 50px;
+    }
+
+    #downCon{
+        width: 90%;
+        top: 300px;
+        gap: 5px;
+    }
+
+    #downCon p, button {
+        font-size: 10px;
+    }
+
+}
+
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+      }
+  }
