@@ -11,9 +11,14 @@ let totalChar = 2;
 
 let totalOfRanNum = 0;
 
-function makeChar() {
-  const ranNum = Math.floor(Math.random() * 6) + 1;
+let totalOfRanNum2 = 0;
 
+function generateRandomNum() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+function makeChar() {
+  const ranNum = generateRandomNum();
   totalOfRanNum = totalOfRanNum + ranNum;
 
   const divEl = document.createElement("div");
@@ -29,6 +34,7 @@ function makeChar() {
   divEl.appendChild(chaImgEl);
 
   const valEl = document.createElement("p");
+  valEl.classList.add("ranp");
   valEl.innerText = ranNum;
   divEl.appendChild(valEl);
 
@@ -38,7 +44,7 @@ function makeChar() {
   return divEl;
 }
 
-const characters = [];
+let characters = [];
 
 addBtnEl.addEventListener("click", (e) => {
   if (characters.length < 6) {
@@ -55,11 +61,11 @@ addBtnEl.addEventListener("click", (e) => {
 });
 
 resetValueBtnEl.addEventListener("click", () => {
-  for (let i = 0; i < characters.length; i++) {
-    console.log(typeof characters[i]);
-    const x = Object.keys(characters[i]);
-    console.log(x);
+  const paras = mainConEl.getElementsByClassName("ranp");
+  for (let i = 0; i < paras.length; i++) {
+    totalOfRanNum2 = totalOfRanNum2 + generateRandomNum();
+    paras[i].innerHTML = generateRandomNum();
   }
+  console.log(totalOfRanNum2);
+  console.log("hello");
 });
-
-// makeChar();
